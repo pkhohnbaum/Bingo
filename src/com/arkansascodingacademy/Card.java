@@ -83,11 +83,14 @@ public class Card {
         return bingo;
     }
 
-    private boolean bingoByRow() {
+    private boolean bingoByRow()
+    {
         boolean bingo = false;
 
-        for (int row = 0; row < 5; row++) {
-            for (int column = 0; column < 5; column++) {
+        for (int row = 0; row < 5; row++)
+        {
+            for (int column = 0; column < 5; column++)
+            {
 
                 if (square[row][column].isCovered()) ;
                 {
@@ -102,6 +105,9 @@ public class Card {
                         bingo = true;
                     }
                 }
+
+
+
 
             }
 
@@ -131,10 +137,44 @@ public class Card {
     }
     private boolean bingoByDiagonal()
     {
-       boolean bingo = false;
+        boolean bingo = false;
+        for (int row = 0; row < 5; row++)
+        {
+            for (int column = 0; column < 5; column++)
+            {
+
+                if (square[row][column].isCovered()) ;
+                {
+                    if (square[0][0].isCovered() &&
+                            square[1][1].isCovered() &&
+                            square[2][2].isCovered() &&
+                            square[3][3].isCovered() &&
+                            square[4][4].isCovered())
 
 
-       return bingo;
+                    {
+                        bingo = true;
+                    }
+                }
+                if (square[row][column].isCovered()) ;
+                {
+                    if (square[0][4].isCovered() &&
+                            square[1][3].isCovered() &&
+                            square[2][2].isCovered() &&
+                            square[3][1].isCovered() &&
+                            square[4][0].isCovered())
+
+
+                    {
+                        bingo = true;
+                    }
+                }
+
+            }
+
+            return bingo;
+        }
+        return bingo;
     }
     private boolean bingoByStamp()
     {
@@ -143,6 +183,8 @@ public class Card {
 
         return bingo;
     }
+
+
 
 
 

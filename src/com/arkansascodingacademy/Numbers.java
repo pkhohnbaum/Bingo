@@ -11,11 +11,11 @@ public class Numbers {
     Random random;
 
 
-    public Numbers()
+    public Numbers(int maxNumber, int minNumber)
     {
         uncalledNumbers = new ArrayList<>();
 
-        for (int i = 1; i <= 75; i++)
+        for (int i = minNumber; i <= maxNumber; i++)
         {
             uncalledNumbers.add(i);
         }
@@ -63,7 +63,7 @@ public class Numbers {
 
     public static void main(String[] args)
     {
-        Numbers numbers = new Numbers();
+        Numbers numbers = new Numbers(75,1);
         numbers.draw();
         numbers.draw();
         numbers.printCalledNumbers();

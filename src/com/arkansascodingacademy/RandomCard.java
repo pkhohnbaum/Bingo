@@ -1,45 +1,49 @@
 package com.arkansascodingacademy;
 
-public class Card
-{
+public class RandomCard {
 
     private Square square[][];
 
 
-    public Card()
-    {
+    public RandomCard() {
         square = new Square[5][5];
 
-        square[0][0] = new Square(2);
-        square[0][1] = new Square(29);
-        square[0][2] = new Square(40);
-        square[0][3] = new Square(49);
-        square[0][4] = new Square(61);
+        Numbers numbers = new Numbers(15, 1);
 
-        square[1][0] = new Square(10);
-        square[1][1] = new Square(26);
-        square[1][2] = new Square(36);
-        square[1][3] = new Square(50);
-        square[1][4] = new Square(73);
+        for (int row =0; row < 5; row++)
+        {
+            square [row][0] = new Square (numbers.draw());
+        }
 
-        square[2][0] = new Square(14);
-        square[2][1] = new Square(20);
-        square[2][2] = new Square(0);
+        numbers = new Numbers(30, 16);
+        for (int row =0; row < 5; row++)
+        {
+            square [row][1] = new Square (numbers.draw());
+        }
+
+        numbers = new Numbers(45, 31);
+        for (int row =0; row < 5; row++)
+        {
+            square [row][2] = new Square (numbers.draw());
+        }
+
+        numbers = new Numbers(60, 46);
+        for (int row =0; row < 5; row++)
+        {
+            square [row][3] = new Square (numbers.draw());
+        }
+
+        numbers = new Numbers(75, 61);
+        for (int row =0; row < 5; row++)
+        {
+            square [row][4] = new Square (numbers.draw());
+        }
+
+
+
+        square [2][2] = new Square (0);
         square[2][2].cover();
-        square[2][3] = new Square(51);
-        square[2][4] = new Square(63);
 
-        square[3][0] = new Square(15);
-        square[3][1] = new Square(18);
-        square[3][2] = new Square(32);
-        square[3][3] = new Square(55);
-        square[3][4] = new Square(64);
-
-        square[4][0] = new Square(8);
-        square[4][1] = new Square(19);
-        square[4][2] = new Square(31);
-        square[4][3] = new Square(47);
-        square[4][4] = new Square(68);
     }
 
     public void print() {
@@ -125,10 +129,10 @@ public class Card
             if
 
                     (square[0][column].isCovered() &&
-                     square[1][column].isCovered() &&
-                     square[2][column].isCovered() &&
-                     square[3][column].isCovered() &&
-                     square[4][column].isCovered())
+                    square[1][column].isCovered() &&
+                    square[2][column].isCovered() &&
+                    square[3][column].isCovered() &&
+                    square[4][column].isCovered())
             {
                 bingo = true;
             }
